@@ -222,28 +222,6 @@ const Bar = ({ value, color, h = 4, w = "100%" }) => (
 const now = () => new Date().toLocaleDateString("en-AU",{day:"2-digit",month:"short",year:"numeric"}) + " " + new Date().toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit"});
 
 export default function App() {
-  const [sites, setSites] = useState(INITIAL_SITES);
-  const [tasks, setTasks] = useState(() => initTasks(INITIAL_SITES));
-  const [view, setView] = useState("list");
-  const [activeSite, setActiveSite] = useState(null);
-  const [expanded, setExpanded] = useState({});
-  const [showAdd, setShowAdd] = useState(false);
-  const [newProject, setNewProject] = useState({ name: "", client: "", start: "", finish: "", budget: "" });
-  // Notes state
-  const [taskNotes, setTaskNotes] = useState({
-    // Demo notes: { "siteId-stageId-taskIdx": [{text, time, author}] }
-    "1-slab-5": [{ text: "Slab poured successfully. No issues.", time: "12 Mar 2025 09:15", author: "KT" }],
-    "1-brick-1": [{ text: "Bricklayer delayed — rescheduled to next Monday.", time: "28 Mar 2025 14:30", author: "KT" }, { text: "Bricklayer arrived. Work in progress.", time: "31 Mar 2025 07:45", author: "SP" }],
-    "2-preliminary-17": [{ text: "Permit received from council. Forwarded to client.", time: "10 Feb 2025 11:00", author: "SP" }],
-  });
-  const [projectNotes, setProjectNotes] = useState({
-    1: [
-      { text: "Client requested minor layout change to kitchen — waiting for revised drawings.", time: "15 Mar 2025 10:20", author: "MP" },
-      { text: "Council inspection passed for slab stage.", time: "18 Mar 2025 16:00", author: "KT" },
-    ],
-const now = () => new Date().toLocaleDateString("en-AU",{day:"2-digit",month:"short",year:"numeric"}) + " " + new Date().toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit"});
-
-export default function App() {
   const [sites, setSites] = useState([]);
   const [tasks, setTasks] = useState({});
   const [view, setView] = useState("list");
@@ -894,3 +872,4 @@ export default function App() {
     </div>
   );
 }
+
